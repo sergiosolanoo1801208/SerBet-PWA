@@ -1,4 +1,4 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/>// sw.js - Service Worker para SerBet
+// sw.js - Service Worker para SerBet
 const CACHE_NAME = 'serbet-v1.0';
 const ASSETS = [
   '/',
@@ -6,7 +6,7 @@ const ASSETS = [
   '/manifest.json'
 ];
 
-// Instalación: cachear archivos esenciales
+// Instalación
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -18,7 +18,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activación: limpiar cachés antiguas
+// Activación
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) => {
@@ -31,12 +31,11 @@ self.addEventListener('activate', (event) => {
   return self.clients.claim();
 });
 
-// Estrategia híbrida: Network First para HTML, Cache First para recursos
+// Estrategia de caché
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
 
-  // Si es navegación a una página HTML
   if (request.mode === 'navigate' || url.pathname.endsWith('.html')) {
     event.respondWith(
       fetch(request)
@@ -52,7 +51,6 @@ self.addEventListener('fetch', (event) => {
         })
     );
   } else {
-    // Para recursos (CSS, JS, imágenes, fuentes)
     event.respondWith(
       caches.match(request)
         .then((cachedResponse) => {
@@ -68,7 +66,6 @@ self.addEventListener('fetch', (event) => {
               return response;
             })
             .catch(() => {
-              // Fallback genérico
               return new Response('Recurso no disponible offline', { status: 404 });
             });
         })
