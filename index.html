@@ -1,0 +1,1212 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>SerBet • Predictor Deportivo</title>
+
+  <!-- ===== MANIFEST INYECTADO POR JS (para evitar problemas de ruta) ===== -->
+  <script>
+    (function() {
+      const manifest = {
+        "name": "SerBet - Predictor Deportivo",
+        "short_name": "SerBet",
+        "description": "Analiza partidos, calcula probabilidades y gestiona tus apuestas",
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#020617",
+        "theme_color": "#0f172a",
+        "orientation": "portrait",
+        "icons": [
+          {
+            "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQbSURBVHic7d1BahRRFIZhUBA8gegC3ICCuRENuRHFcCa6hG7APbiCyo3kKqLgQsSVlyCKYDZUVFTwAxA+gR4U1COq4bjU5a27u7q6Xv7/QSc9qCpe+vDk0kU8rVGjRo0aNWrUqFHj4uPk/E+pFeP4qbtq9P1e+SVYH81x8lJa3iPnn5O/m//cq9bAavrA+gnn0t56f4e0Ny+lbUOUzt7p2+R7w0Hh+4iM7iAt7xHp71R86Fxa/kVa/iFj4L9/67vkvLQ1pI+W7l8cP/1tYdEux0kV//6iB5z90Pk0fStJD03/fXxtx7pL09/62++1tPbJ62H8TJm0vEfOL9NPTFp7j7T3H9LyHpHZqkGqo31cOm9zjoNPrnXpz/E/+fYt/+B4m++U77X20dKfSFr8m/SdSmd/P/q1pOU9Ujq/pv2tDzLp+83x0/9MWkP8T+i6d/7s/umdb+kDpnvPu5T+sXff6xn5H/y77cfPJOnjI+M/0wfg/Kd89n3S8h45/yid9+r9W6TlPdK/Nf3r0to7/TvS2ktv/dKk9RGl59fkF7qSlyGt59LZK533k3S3yN6h8H1EfoIq/YEr/a3nPsN0nnLe1zjfUu+htH5P+vvSO3ra+9L5Hyx+SLR3Zdf7V9R/TM/4bOZ+/U1avP/ebLqXae9Te91a+3b2Cf5M+rT/7e7GzMaL1uP/MK299F/uTf9Hf8dZ2uu0vM2D9g++y0fL9xWNwyf0Wf7K9xb/nGn9OyUvQ1pbfMdIyz9kTMT/9Sfngr6R0p6nT8N7zYdHy3tE+r7zX4H/99+htCf9W/97P47lPZI+lH9n9hJtPPrE9dJ9a/3HlPZ+7dN+9K7V3uOu9r6HpP3bqW9Y//OPaTt7pL/vtPX5fVN2+o6ZvZekf8T80NHyo6Wzr/9Z3tH76O07pnx/tf+QW7d4n8J3T3oLuF4vPEir39W+8+HtBXX2ly9/uLWld0s+PbPvzeT7xH+Z2Qea9D619yjtnVrrYPlx8qvUXn1sTtpaJv0D7pG++/mH2FqfvTf7C2LhX7W2o49+MfH/2PynH9rXt/wLcPKLq/SXf6S1d75NZF9mL9EfLd8j+q97yz/M7v9eZ39BOJk/JO3NpPeRL7D2vQvtCX/4vT3Sa07/eXy/1FfE4y/6W4TZP8aD7rfHR4vX2ONo8S96O3q0/BfK6Vse+adrpOOyGzeFuzFpHG/8E9Pir+bf0fqPZ23qO2/au2PpLC79j//2dvXHG68njuO4rVu3b7mT/7TW9vuOzX1Gx3f77R239nH8BAlpjmydbV16AAAAAElFTkSuQmCC",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+          },
+          {
+            "src": "data:image/png;base64,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",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+          }
+        ],
+        "categories": ["sports"],
+        "lang": "es"
+      };
+
+      const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+      const manifestURL = URL.createObjectURL(manifestBlob);
+      document.querySelector('link[rel="manifest"]').href = manifestURL;
+    })();
+  </script>
+  <link rel="manifest" id="manifest-link">
+
+  <!-- ===== SCRIPTS EXTERNOS ===== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- ===== ESTILOS ===== -->
+  <style>
+    /* ===== ESTILOS COMPLETOS DE SERBET ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap');
+    * { font-family: 'Inter', sans-serif; }
+    body { background: #020617; color: #e2e8f0; overflow-x: hidden; }
+    .glass-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 28px; backdrop-filter: blur(2px); }
+    .input-field { background: #1e293b; border: 1px solid #334155; border-radius: 18px; transition: all 0.2s; }
+    .input-field:focus-within { border-color: #3b82f6; box-shadow: 0 0 0 2px rgba(59,130,246,0.2); }
+    .input-inner { background: transparent; border: none; outline: none; color: white; width: 100%; padding: 12px 16px; font-size: 0.9rem; }
+    .progress-track { background: #1e293b; height: 6px; border-radius: 6px; width: 100%; overflow: hidden; margin-top: 6px; }
+    .progress-fill { height: 100%; transition: width 0.5s ease; border-radius: 6px; }
+    .risk-red { background: #ef4444; }
+    .risk-orange { background: #f59e0b; }
+    .risk-green { background: #22c55e; }
+    .market-row { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; border-bottom: 1px solid #1e293b; padding-bottom: 16px; }
+    .market-row:last-child { border-bottom: none; }
+    .dual-bar { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; align-items: center; }
+    .dual-item { flex: 1; min-width: 140px; }
+    .stat-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 24px; padding: 18px 16px; transition: all 0.1s; }
+    .nav-pill { transition: all 0.2s; cursor: pointer; font-weight: 500; padding: 8px 24px; border-radius: 40px; background: transparent; color: #94a3b8; font-size: 0.85rem; letter-spacing: -0.2px; white-space: nowrap; }
+    .nav-pill.active { background: #1e293b; color: #3b82f6; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    .modal-overlay { background: rgba(2,6,23,0.94); backdrop-filter: blur(8px); }
+    .history-item { background: #0f172a; border: 1px solid #1e2a3e; border-radius: 20px; padding: 14px 16px; overflow-x: hidden; }
+    .badge-status { font-size: 10px; font-weight: 600; padding: 4px 12px; border-radius: 30px; letter-spacing: 0.3px; display: inline-block; }
+    .settings-icon { cursor: pointer; transition: all 0.2s; padding: 8px; border-radius: 50%; background: #1e293b; display: inline-flex; align-items: center; justify-content: center; }
+    .settings-icon:hover { background: #334155; transform: rotate(15deg); }
+    .action-btn { transition: all 0.2s; cursor: pointer; background: #1e293b; padding: 6px 12px; border-radius: 28px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+    .action-btn:hover { background: #334155; }
+    .button-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; align-items: center; }
+    .movement-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #1e293b; font-size: 0.75rem; }
+    .movement-row:last-child { border-bottom: none; }
+    .movement-amount-deposit { color: #34d399; }
+    .movement-amount-withdraw { color: #f87171; }
+    .pronostico-card { background: #1e293b; border-radius: 20px; padding: 18px; margin-bottom: 14px; border-left: 4px solid #3b82f6; }
+    .pronostico-card .eliminar-btn { color: #f87171; cursor: pointer; font-size: 13px; font-weight: 500; }
+    .pronostico-card .eliminar-btn:hover { color: #ef4444; }
+    .campo-combinada { display: flex; flex-direction: column; gap: 10px; }
+    .campo-combinada input { background: #0f172a; border: 1px solid #334155; border-radius: 14px; padding: 10px 14px; color: white; font-size: 0.9rem; width: 100%; }
+    .campo-combinada input:focus { outline: none; border-color: #3b82f6; }
+    .campo-combinada .input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .campo-combinada .input-group.full { grid-template-columns: 1fr; }
+    .tab-btn { transition: all 0.2s; cursor: pointer; padding: 6px 16px; border-radius: 30px; background: transparent; color: #94a3b8; font-weight: 500; font-size: 0.8rem; border: 1px solid transparent; }
+    .tab-btn.active { background: #1e293b; color: #3b82f6; border-color: #3b82f6; }
+    .tab-btn:hover { background: #1e293b; color: #e2e8f0; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .collapse-icon { transition: transform 0.2s; }
+    .collapse-icon.collapsed { transform: rotate(-90deg); }
+    .input-container { overflow: hidden; transition: max-height 0.3s ease, opacity 0.2s ease; }
+    .input-container.collapsed { max-height: 0 !important; opacity: 0; padding: 0; margin: 0; }
+    @media (max-width: 640px) {
+      .nav-pill { padding: 6px 16px; font-size: 0.75rem; }
+      .history-item { padding: 12px; }
+      .action-btn { padding: 5px 10px; font-size: 10px; }
+      .button-group { gap: 6px; margin-top: 10px; }
+      .movement-row { font-size: 0.7rem; }
+      .campo-combinada .input-group { grid-template-columns: 1fr; }
+      .tab-btn { padding: 4px 12px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== CONTENIDO COMPLETO DE SERBET ===== -->
+  <div class="max-w-7xl mx-auto">
+    <!-- HEADER -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+      <div class="flex items-center gap-3">
+        <h1 class="text-2xl md:text-4xl font-bold tracking-tight text-white">SerBet<span class="text-blue-500">.</span></h1>
+        <div id="settingsBtn" class="settings-icon ml-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+      </div>
+      <div class="flex gap-1 bg-slate-900/40 p-1 rounded-full border border-slate-800 overflow-x-auto no-scrollbar">
+        <div data-tab="analysis" class="nav-pill active">Análisis</div>
+        <div data-tab="history" class="nav-pill">Historial</div>
+        <div data-tab="stats" class="nav-pill">Estadísticas</div>
+      </div>
+    </div>
+
+    <!-- PANEL ANÁLISIS -->
+    <div id="analysisPanel" class="transition-all">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-4 space-y-5">
+          <div class="glass-card p-5 sticky top-6">
+            <!-- Encabezado del panel con toggle -->
+            <div class="flex justify-between items-center mb-4">
+              <div class="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">Datos del partido</div>
+              <button id="toggleInputsBtn" class="text-slate-400 hover:text-white transition-transform duration-200" aria-label="Toggle inputs">
+                <svg class="w-4 h-4 collapse-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+            </div>
+            <!-- Contenedor de inputs (colapsable) -->
+            <div id="inputsContainer" class="input-container space-y-5" style="max-height: 2000px;">
+              <div class="grid grid-cols-2 gap-3 mb-5">
+                <div class="input-field"><input type="text" id="homeTeamName" placeholder="Local" class="input-inner font-medium" value="Liverpool"></div>
+                <div class="input-field"><input type="text" id="awayTeamName" placeholder="Visitante" class="input-inner font-medium" value="Chelsea"></div>
+              </div>
+              <!-- Goles promedios -->
+              <div class="space-y-4">
+                <div><label class="text-xs text-slate-300 font-medium">Local (promedios goles)</label><div class="grid grid-cols-2 gap-2 mt-1"><div class="input-field"><input type="number" id="h_avg_goals" step="0.01" placeholder="G Favor" class="input-inner" value="2.00"></div><div class="input-field"><input type="number" id="h_avg_conceded" step="0.01" placeholder="G Contra" class="input-inner" value="1.00"></div></div></div>
+                <div><label class="text-xs text-slate-300 font-medium">Visitante (promedios goles)</label><div class="grid grid-cols-2 gap-2 mt-1"><div class="input-field"><input type="number" id="a_avg_goals" step="0.01" placeholder="G Favor" class="input-inner" value="1.50"></div><div class="input-field"><input type="number" id="a_avg_conceded" step="0.01" placeholder="G Contra" class="input-inner" value="1.20"></div></div></div>
+              </div>
+              <!-- Córners promedios -->
+              <div class="space-y-4 mt-4 border-t border-slate-700 pt-4">
+                <div><label class="text-xs text-slate-300 font-medium">Local (promedios córners)</label><div class="grid grid-cols-2 gap-2 mt-1"><div class="input-field"><input type="number" id="h_avg_corners" step="0.1" placeholder="Córners favor" class="input-inner" value="6.5"></div><div class="input-field"><input type="number" id="h_avg_corners_conceded" step="0.1" placeholder="Córners contra" class="input-inner" value="3.2"></div></div></div>
+                <div><label class="text-xs text-slate-300 font-medium">Visitante (promedios córners)</label><div class="grid grid-cols-2 gap-2 mt-1"><div class="input-field"><input type="number" id="a_avg_corners" step="0.1" placeholder="Córners favor" class="input-inner" value="4.5"></div><div class="input-field"><input type="number" id="a_avg_corners_conceded" step="0.1" placeholder="Córners contra" class="input-inner" value="5.1"></div></div></div>
+              </div>
+            </div>
+            <!-- Botones siempre visibles -->
+            <div class="flex flex-col gap-3 mt-6">
+              <button id="calc_btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition shadow-md">Analizar encuentro</button>
+              <button id="clearAnalysisBtn" class="w-full border border-slate-600 hover:bg-slate-800 text-slate-300 font-medium py-2.5 rounded-xl transition">Vaciar Análisis</button>
+            </div>
+            <div id="modoCombinadaIndicator" class="mt-3 hidden text-center text-xs text-indigo-400 border border-indigo-800/50 rounded-xl py-2 bg-indigo-950/30">🔗 Agregando pronóstico a combinada</div>
+          </div>
+        </div>
+
+        <div id="results_container" class="lg:col-span-8 space-y-5 hidden">
+          <!-- xG y Córners esperados -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="glass-card p-4 border-l-4 border-l-blue-500"><div class="text-[10px] font-semibold text-slate-400 uppercase">xG Local</div><div id="xg_local_val" class="text-xl md:text-2xl font-bold tracking-tight">0.00</div></div>
+            <div class="glass-card p-4 border-l-4 border-l-emerald-500"><div class="text-[10px] font-semibold text-slate-400 uppercase">xG Visitante</div><div id="xg_away_val" class="text-xl md:text-2xl font-bold tracking-tight">0.00</div></div>
+            <div class="glass-card p-4 border-l-4 border-l-yellow-500"><div class="text-[10px] font-semibold text-slate-400 uppercase">Córners esp. Local</div><div id="corners_local_val" class="text-xl md:text-2xl font-bold tracking-tight">0.0</div></div>
+            <div class="glass-card p-4 border-l-4 border-l-purple-500"><div class="text-[10px] font-semibold text-slate-400 uppercase">Córners esp. Visit.</div><div id="corners_away_val" class="text-xl md:text-2xl font-bold tracking-tight">0.0</div></div>
+          </div>
+
+          <!-- Pestañas -->
+          <div class="flex gap-2 mb-4 flex-wrap">
+            <button class="tab-btn active" data-tab="general">General</button>
+            <button class="tab-btn" data-tab="goles">Goles</button>
+            <button class="tab-btn" data-tab="corners">Tiros de esquina</button>
+          </div>
+
+          <!-- General -->
+          <div id="tab-general" class="tab-content active space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="glass-card p-4"><h3 class="text-[10px] font-semibold text-slate-400 uppercase mb-2">Ganador 1X2</h3><div id="res_1x2"></div></div>
+              <div class="glass-card p-4"><h3 class="text-[10px] font-semibold text-slate-400 uppercase mb-2">Doble oportunidad</h3><div id="res_dc"></div></div>
+              <div class="glass-card p-4 col-span-1 md:col-span-2"><h3 class="text-[10px] font-semibold text-slate-400 uppercase mb-2">Ambos Marcan</h3><div id="res_btts_simple" class="grid grid-cols-2 gap-4"></div></div>
+            </div>
+          </div>
+
+          <!-- Goles -->
+          <div id="tab-goles" class="tab-content space-y-5">
+            <div class="glass-card p-5"><h3 class="text-sm font-semibold text-slate-200 mb-3">Goles totales</h3><div id="totalGoalsVisual"></div></div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div class="glass-card p-5"><h3 class="text-sm font-semibold text-slate-200 mb-3" id="homeTeamTitleLine">Goles (Local)</h3><div id="res_home_goals_visual"></div></div>
+              <div class="glass-card p-5"><h3 class="text-sm font-semibold text-slate-200 mb-3" id="awayTeamTitleLine">Goles (Visitante)</h3><div id="res_away_goals_visual"></div></div>
+            </div>
+          </div>
+
+          <!-- Córners -->
+          <div id="tab-corners" class="tab-content space-y-5">
+            <div class="glass-card p-5"><h3 class="text-sm font-semibold text-slate-200 mb-3">Córners totales</h3><div id="totalCornersVisual"></div></div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <div class="glass-card p-5"><h3 class="text-sm font-semibold text-slate-200 mb-3" id="homeTeamCornersTitle">Córners (Local)</h3><div id="res_home_corners_visual"></div></div>
+              <div class="glass-card p-5"><h3 class="text-sm font-semibold text-slate-200 mb-3" id="awayTeamCornersTitle">Córners (Visitante)</h3><div id="res_away_corners_visual"></div></div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-end gap-3 pt-1">
+            <button id="openAddPredictionBtn" class="bg-slate-700 hover:bg-slate-600 text-white text-sm font-medium px-5 py-2 rounded-full transition">+ Individual</button>
+            <button id="openCombinadaBtn" class="bg-indigo-700 hover:bg-indigo-600 text-white text-sm font-medium px-5 py-2 rounded-full transition">+ Combinada</button>
+            <button id="agregarACombinadaBtn" class="hidden bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-medium px-5 py-2 rounded-full transition">📥 Agregar a combinada</button>
+          </div>
+        </div>
+        <div id="placeholder" class="lg:col-span-8 flex items-center justify-center glass-card border-dashed border-2 border-slate-700 p-12 md:p-20"><div class="text-center"><div class="text-slate-700 text-4xl md:text-5xl font-black mb-2">SerBet</div><p class="text-slate-500 text-xs md:text-sm">Ingresa promedios y analiza el partido</p></div></div>
+      </div>
+    </div>
+
+    <!-- HISTORIAL -->
+    <div id="historyPanel" class="hidden glass-card p-5 md:p-6 mt-5">
+      <div class="flex flex-wrap justify-between items-center gap-3 mb-5"><h2 class="text-lg font-semibold">Registro de apuestas</h2><div class="flex gap-2"><input type="date" id="historyDateFilter" class="bg-slate-800 border border-slate-700 rounded-xl px-3 py-1.5 text-sm"><button id="resetFilterBtn" class="text-xs bg-slate-700 px-3 py-1.5 rounded-full">Todas</button></div></div>
+      <div id="historyListContainer" class="space-y-3 max-h-[540px] overflow-y-auto pr-1"></div>
+      <div id="noHistoryMsg" class="text-center text-slate-500 py-10 hidden">No hay predicciones guardadas.</div>
+    </div>
+
+    <!-- STATS -->
+    <div id="statsPanel" class="hidden mt-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="space-y-4">
+          <div class="stat-card"><div class="text-slate-400 text-xs uppercase">Monto inicial</div><input type="number" id="initialCapitalInput" step="100" class="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white text-xl font-semibold mt-1" value="1000"></div>
+          <div class="stat-card"><div class="text-slate-400 text-xs uppercase">Monto actual</div><div id="currentCapitalDisplay" class="text-2xl md:text-3xl font-bold text-emerald-400 mt-1">$0</div></div>
+          <div class="grid grid-cols-2 gap-3"><div class="stat-card"><div class="text-slate-400 text-xs">Apuestas totales</div><div id="statTotalBets" class="text-xl font-bold">0</div></div><div class="stat-card"><div class="text-slate-400 text-xs">Ganadas</div><div id="statWon" class="text-xl font-bold text-emerald-400">0</div></div><div class="stat-card"><div class="text-slate-400 text-xs">Perdidas</div><div id="statLost" class="text-xl font-bold text-rose-400">0</div></div><div class="stat-card"><div class="text-slate-400 text-xs">Efectividad</div><div id="statHitRate" class="text-xl font-bold text-sky-400">0%</div></div></div>
+        </div>
+        <div class="space-y-4">
+          <div class="stat-card"><div class="flex justify-between border-b border-slate-800 pb-2"><span class="text-slate-300 text-sm">Cuota promedio</span><span id="avgOddsStat" class="font-mono font-bold">0.00</span></div><div class="flex justify-between pt-3"><span class="text-slate-300 text-sm">Efectividad mínima</span><span id="minReqRateStat" class="font-mono font-bold">0%</span></div></div>
+          <div class="stat-card bg-blue-950/30 border-blue-800/40"><div class="flex justify-between items-center"><span class="text-slate-200 font-medium">Ventaja (edge)</span><span id="edgeStat" class="text-2xl font-black text-blue-300">0%</span></div><div class="text-[9px] text-slate-500 mt-1">(real - mínima requerida)</div></div>
+          <div class="stat-card flex gap-3 justify-center">
+            <button id="addDepositBtn" class="bg-emerald-700 hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-full text-sm transition">+ Depósito</button>
+            <button id="addWithdrawBtn" class="bg-rose-700 hover:bg-rose-600 text-white font-medium py-2 px-4 rounded-full text-sm transition">- Retiro</button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 glass-card p-5">
+        <h3 class="text-sm font-semibold text-slate-200 mb-3 flex items-center gap-2">📋 Historial de depósitos y retiros</h3>
+        <div id="movementsHistoryContainer" class="max-h-60 overflow-y-auto"></div>
+        <div id="noMovementsMsg" class="text-center text-slate-500 py-4 text-sm">No hay movimientos registrados</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALES -->
+  <div id="settingsModal" class="fixed inset-0 flex items-center justify-center z-50 modal-overlay hidden transition-all p-4"><div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-md p-5 shadow-2xl"><h3 class="text-xl font-semibold mb-3">Ajustes</h3><div class="space-y-3"><button id="exportDataBtn" class="w-full bg-slate-700 hover:bg-slate-600 py-2.5 rounded-xl font-medium transition">Exportar datos (JSON)</button><div class="relative"><label class="w-full bg-slate-700 hover:bg-slate-600 py-2.5 rounded-xl font-medium transition flex justify-center cursor-pointer">Importar datos (JSON)<input type="file" id="importFileInput" accept=".json" class="absolute opacity-0 w-full h-full cursor-pointer"></label></div><button id="closeSettingsBtn" class="w-full border border-slate-600 text-slate-300 py-2 rounded-xl mt-1">Cerrar</button></div></div></div>
+
+  <!-- Modal Individual -->
+  <div id="predictionModal" class="fixed inset-0 flex items-center justify-center z-50 modal-overlay hidden transition-all p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-lg p-5 shadow-2xl">
+      <h3 id="modalTitle" class="text-lg font-semibold mb-3">Nueva predicción</h3>
+      <input type="hidden" id="editId" value="">
+      <div class="grid grid-cols-2 gap-2 text-sm">
+        <input type="date" id="modalDate" class="bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="time" id="modalTime" class="bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="text" id="modalLeague" placeholder="Liga" class="col-span-2 bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="text" id="modalHomeTeam" placeholder="Local" readonly class="col-span-1 bg-slate-700/50 border border-slate-600 rounded-xl p-2 text-slate-300">
+        <input type="text" id="modalAwayTeam" placeholder="Visitante" readonly class="col-span-1 bg-slate-700/50 border border-slate-600 rounded-xl p-2 text-slate-300">
+        <input type="text" id="modalMarket" placeholder="Mercado" class="col-span-2 bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="text" id="modalLine" placeholder="Línea" class="bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="number" id="modalProbability" step="0.1" placeholder="Probabilidad %" class="bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="number" id="modalOdds" step="0.01" placeholder="Cuota" class="bg-slate-800 border border-slate-600 rounded-xl p-2">
+        <input type="number" id="modalStake" step="10" placeholder="Dinero apostado" class="col-span-2 bg-slate-800 border border-slate-600 rounded-xl p-2">
+      </div>
+      <div class="flex justify-end gap-2 mt-5">
+        <button id="closeModalBtn" class="bg-slate-700 px-4 py-2 rounded-xl text-sm">Cancelar</button>
+        <button id="savePredictionBtn" class="bg-blue-600 px-5 py-2 rounded-xl font-semibold text-sm">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Combinada -->
+  <div id="combinadaModal" class="fixed inset-0 flex items-center justify-center z-50 modal-overlay hidden transition-all p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-5">
+        <h3 class="text-xl font-semibold">🔗 Combinada</h3>
+        <button id="closeCombinadaBtn" class="text-slate-400 hover:text-white text-sm px-4 py-2 rounded-lg bg-slate-700/50">✕ Cerrar</button>
+      </div>
+      <input type="hidden" id="combEditId" value="">
+      <div class="grid grid-cols-2 gap-4 mb-5">
+        <div><label class="text-xs text-slate-400 block mb-1">Fecha</label><input type="date" id="combFecha" class="w-full bg-slate-800 border border-slate-600 rounded-xl p-2 text-white"></div>
+        <div><label class="text-xs text-slate-400 block mb-1">Hora</label><input type="time" id="combHora" class="w-full bg-slate-800 border border-slate-600 rounded-xl p-2 text-white"></div>
+      </div>
+      <div id="listaPronosticosCombinada" class="space-y-4 mb-5"></div>
+      <div class="flex flex-wrap gap-3 mb-4">
+        <button id="addPronosticoBtn" class="bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-5 py-2.5 rounded-full transition">+ Añadir pronóstico</button>
+        <div class="flex-1 min-w-[150px]">
+          <label class="text-xs text-slate-400 block mb-1">Stake total</label>
+          <input type="number" id="combStakeTotalInput" step="10" placeholder="Stake total" class="w-full bg-slate-800 border border-slate-600 rounded-xl p-2 text-white">
+        </div>
+      </div>
+      <div id="resumenCombinada" class="bg-slate-800/50 rounded-xl p-4 text-sm mb-4 hidden">
+        <div class="grid grid-cols-2 gap-3">
+          <div><span class="text-slate-400">Pronósticos:</span> <span id="combCount" class="font-bold">0</span></div>
+          <div><span class="text-slate-400">Cuota combinada:</span> <span id="combOddsTotal" class="font-mono font-bold">0.00</span></div>
+          <div><span class="text-slate-400">Stake total:</span> <span id="combStakeDisplay" class="font-mono font-bold">$0</span></div>
+          <div><span class="text-slate-400">Probabilidad estimada:</span> <span id="combProbTotal" class="font-mono font-bold">0%</span></div>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-end gap-3 mt-4">
+        <button id="guardarCombinadaBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium px-6 py-2.5 rounded-full transition" disabled>Guardar combinada</button>
+      </div>
+      <div class="text-xs text-slate-500 mt-2">Al menos 2 pronósticos completos para guardar.</div>
+    </div>
+  </div>
+
+  <!-- Modal Depósito/retiro -->
+  <div id="capitalModal" class="fixed inset-0 flex items-center justify-center z-50 modal-overlay hidden transition-all p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-sm p-5 shadow-2xl">
+      <h3 id="capitalModalTitle" class="text-lg font-semibold mb-3">Movimiento</h3>
+      <input type="number" id="capitalAmount" step="10" placeholder="Cantidad" class="w-full bg-slate-800 border border-slate-600 rounded-xl p-2 mb-3">
+      <input type="date" id="capitalDate" class="w-full bg-slate-800 border border-slate-600 rounded-xl p-2 mb-3">
+      <div class="flex justify-end gap-2">
+        <button id="closeCapitalModal" class="bg-slate-700 px-4 py-2 rounded-xl text-sm">Cancelar</button>
+        <button id="confirmCapitalBtn" class="bg-blue-600 px-5 py-2 rounded-xl text-sm">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===========================
+    //  HELPERS Y POISSON
+    // ===========================
+    const factorial = n => { if (n===0) return 1; let r=1; for(let i=2;i<=n;i++) r*=i; return r; };
+    const poisson = (k, lambda) => (Math.pow(lambda, k) * Math.exp(-lambda)) / factorial(k);
+    function getRiskClass(prob) { let perc = prob * 100; if (perc < 60) return "risk-red"; if (perc >= 60 && perc <= 75) return "risk-orange"; return "risk-green"; }
+    function renderProgressBar(prob, label, showOdd = true) {
+      let percent = Math.round(prob * 100);
+      let odd = prob > 0.001 ? (1/prob).toFixed(2) : "99+";
+      let fillClass = getRiskClass(prob);
+      return `<div class="mb-1.5"><div class="flex justify-between text-xs mb-0.5"><span class="text-slate-300 font-medium text-[11px]">${label}</span><div class="space-x-1"><span class="text-white text-[11px] font-semibold">${percent}%</span>${showOdd ? `<span class="text-blue-400 text-[9px] font-mono">@${odd}</span>` : ''}</div></div><div class="progress-track"><div class="progress-fill ${fillClass}" style="width:${percent}%"></div></div></div>`;
+    }
+    function renderDualRow(line, pOver, pUnder){ return `<div class="market-row"><div class="text-slate-400 text-[10px] font-mono mb-1">Línea ${line}</div><div class="dual-bar"><div class="dual-item">${renderProgressBar(pOver,`Over ${line}`,1)}</div><div class="dual-item">${renderProgressBar(pUnder,`Under ${line}`,1)}</div></div></div>`; }
+    function renderTeamGoalsVisual(probs, thresholds){ let html=''; for(let t of thresholds){ let pUnder=0; for(let i=0;i<10;i++) if(i<t) pUnder+=probs[i]; let pOver=1-pUnder; html+=`<div class="market-row pb-2 mb-2"><div class="text-slate-400 text-[10px] font-mono mb-1">Línea ${t}</div><div class="dual-bar"><div class="dual-item">${renderProgressBar(pOver,`+${t} goles`,1)}</div><div class="dual-item">${renderProgressBar(pUnder,`-${t} goles`,1)}</div></div></div>`; } return html; }
+    function renderTeamCornersVisual(probs, thresholds){ let html=''; for(let t of thresholds){ let pUnder=0; for(let i=0;i<20;i++) if(i<t) pUnder+=probs[i]; let pOver=1-pUnder; html+=`<div class="market-row pb-2 mb-2"><div class="text-slate-400 text-[10px] font-mono mb-1">Línea ${t}</div><div class="dual-bar"><div class="dual-item">${renderProgressBar(pOver,`+${t}`,1)}</div><div class="dual-item">${renderProgressBar(pUnder,`-${t}`,1)}</div></div></div>`; } return html; }
+
+    // ===========================
+    //  DATA Y ALMACENAMIENTO
+    // ===========================
+    let predictions = [];
+    let initialCapital = 1000;
+    let capitalMovements = [];
+    const STORAGE_KEY = "serbet_predictions_final";
+    const CAPITAL_KEY = "serbet_capital_final";
+    const MOVEMENTS_KEY = "serbet_capital_movements";
+
+    function formatCOP(value) { return new Intl.NumberFormat('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value); }
+
+    function loadStorage() {
+      let stored = localStorage.getItem(STORAGE_KEY);
+      predictions = stored ? JSON.parse(stored) : [];
+      let cap = localStorage.getItem(CAPITAL_KEY);
+      if(cap) initialCapital = parseFloat(cap);
+      let mov = localStorage.getItem(MOVEMENTS_KEY);
+      capitalMovements = mov ? JSON.parse(mov) : [];
+      document.getElementById('initialCapitalInput').value = initialCapital;
+      updateStatsAndCapital();
+      renderMovementsHistory();
+    }
+    function savePredictions() { localStorage.setItem(STORAGE_KEY, JSON.stringify(predictions)); renderHistory(); updateStatsAndCapital(); }
+    function saveCapital() { localStorage.setItem(CAPITAL_KEY, initialCapital); updateStatsAndCapital(); }
+    function saveMovements() { localStorage.setItem(MOVEMENTS_KEY, JSON.stringify(capitalMovements)); updateStatsAndCapital(); renderMovementsHistory(); }
+
+    function computeCurrentCapital() {
+      let total = initialCapital;
+      for(let p of predictions) {
+        if(p.status === 'won') total += (p.stake * (p.odds - 1));
+        else if(p.status === 'lost') total -= p.stake;
+      }
+      for(let m of capitalMovements) {
+        if(m.type === 'deposit') total += m.amount;
+        else if(m.type === 'withdraw') total -= m.amount;
+      }
+      return total;
+    }
+
+    function updateStatsAndCapital() {
+      let current = computeCurrentCapital();
+      document.getElementById('currentCapitalDisplay').innerHTML = `$${formatCOP(current)}`;
+      let resolved = predictions.filter(p => p.status === 'won' || p.status === 'lost');
+      let totalBets = resolved.length, won = resolved.filter(p=>p.status === 'won').length, lost = totalBets - won;
+      let hitRate = totalBets === 0 ? 0 : (won/totalBets)*100;
+      let avgOdds = 0; if(totalBets>0) avgOdds = resolved.reduce((acc,p)=>acc+p.odds,0)/totalBets;
+      let minReq = avgOdds>0 ? (1/avgOdds)*100 : 0;
+      let edge = hitRate - minReq;
+      document.getElementById('statTotalBets').innerText = totalBets;
+      document.getElementById('statWon').innerText = won;
+      document.getElementById('statLost').innerText = lost;
+      document.getElementById('statHitRate').innerHTML = hitRate.toFixed(1)+'%';
+      document.getElementById('avgOddsStat').innerHTML = avgOdds.toFixed(2);
+      document.getElementById('minReqRateStat').innerHTML = minReq.toFixed(1)+'%';
+      document.getElementById('edgeStat').innerHTML = (edge>0?`+${edge.toFixed(1)}%`: `${edge.toFixed(1)}%`);
+    }
+
+    function renderMovementsHistory() {
+      const container = document.getElementById('movementsHistoryContainer');
+      const noMsg = document.getElementById('noMovementsMsg');
+      if (!capitalMovements.length) {
+        container.innerHTML = '';
+        noMsg.classList.remove('hidden');
+        return;
+      }
+      noMsg.classList.add('hidden');
+      const sorted = [...capitalMovements].sort((a,b) => b.date.localeCompare(a.date));
+      container.innerHTML = sorted.map((mov, idx) => {
+        const amountFormatted = formatCOP(mov.amount);
+        const typeText = mov.type === 'deposit' ? 'Depósito' : 'Retiro';
+        const amountClass = mov.type === 'deposit' ? 'movement-amount-deposit' : 'movement-amount-withdraw';
+        return `
+          <div class="movement-row">
+            <div class="flex-1"><span class="text-slate-400 text-[10px]">${mov.date}</span><span class="ml-2 text-slate-300 text-xs">${typeText}</span></div>
+            <div class="font-mono ${amountClass} text-xs font-bold">$${amountFormatted}</div>
+            <button class="undo-movement ml-2 text-red-400 hover:text-red-300 text-xs" data-index="${idx}" data-original-index="${capitalMovements.findIndex(m => m.date === mov.date && m.amount === mov.amount && m.type === mov.type)}">✖️</button>
+          </div>
+        `;
+      }).join('');
+      document.querySelectorAll('.undo-movement').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const originalIdx = parseInt(btn.dataset.originalIndex);
+          if (!isNaN(originalIdx) && originalIdx >= 0 && originalIdx < capitalMovements.length) {
+            capitalMovements.splice(originalIdx, 1);
+            saveMovements();
+            renderMovementsHistory();
+            updateStatsAndCapital();
+          }
+        });
+      });
+    }
+
+    // ===========================
+    //  HISTORIAL
+    // ===========================
+    function renderHistory() {
+      let filterDate = document.getElementById('historyDateFilter').value;
+      let filtered = [...predictions];
+      if(filterDate) filtered = filtered.filter(p => p.date === filterDate);
+      filtered.sort((a,b)=>(b.date+b.time).localeCompare(a.date+a.time));
+      let container = document.getElementById('historyListContainer');
+      let noMsg = document.getElementById('noHistoryMsg');
+      if(filtered.length===0) { container.innerHTML=''; noMsg.classList.remove('hidden'); return; }
+      noMsg.classList.add('hidden');
+      container.innerHTML = filtered.map(p => {
+        let utilidad = '';
+        if(p.status === 'won') utilidad = `+$${formatCOP(p.stake * (p.odds - 1))}`;
+        else if(p.status === 'lost') utilidad = `-$${formatCOP(p.stake)}`;
+        else utilidad = 'Pendiente';
+        let tipo = p.type === 'combinada' ? 'Combinada' : 'Individual';
+        let probDisplay = Math.round(p.probPercent);
+        let oddsDisplay = p.odds.toFixed(2);
+        let stakeDisplay = formatCOP(p.stake);
+        let resumenPrincipal = '';
+        let detalles = '';
+
+        if (p.type === 'combinada') {
+          resumenPrincipal = `<div class="font-semibold text-sm mt-0.5">${tipo} | Cuota total: ${oddsDisplay} | Stake total: $${stakeDisplay}</div>`;
+          detalles = p.details.map((d, i) => {
+            let probDet = Math.round(d.probPercent);
+            let oddsDet = d.odds.toFixed(2);
+            let leagueDisplay = d.league || 'Liga';
+            return `<div class="mt-1 ml-2 text-xs border-l-2 border-indigo-400 pl-2">
+              <span class="text-slate-300 font-medium">${leagueDisplay}</span><br>
+              <span class="text-slate-400">${d.home} vs ${d.away} | ${d.market} / ${d.line} (${probDet}% @${oddsDet})</span>
+            </div>`;
+          }).join('');
+          detalles = `<div class="mt-2">${detalles}</div>`;
+        } else {
+          resumenPrincipal = `<div class="font-semibold text-sm mt-0.5">${tipo} | Cuota: ${oddsDisplay} | Stake: $${stakeDisplay}</div>`;
+          let leagueDisplay = p.league || 'Liga';
+          detalles = `<div class="mt-2">
+            <div class="mt-1 ml-2 text-xs border-l-2 border-indigo-400 pl-2">
+              <span class="text-slate-300 font-medium">${leagueDisplay}</span><br>
+              <span class="text-slate-400">${p.home} vs ${p.away} | ${p.market} / ${p.line} (${probDisplay}% @${oddsDisplay})</span>
+            </div>
+          </div>`;
+        }
+
+        return `<div class="history-item" data-id="${p.id}">
+          <div>
+            <div class="text-slate-400 text-[10px]">${p.date} ${p.time}</div>
+            ${resumenPrincipal}
+            ${detalles}
+          </div>
+          <div class="button-group">
+            <button data-id="${p.id}" data-status="won" class="status-update bg-emerald-800/40 hover:bg-emerald-700 text-xs px-3 py-1.5 rounded-full">Ganada</button>
+            <button data-id="${p.id}" data-status="lost" class="status-update bg-rose-800/40 hover:bg-rose-700 text-xs px-3 py-1.5 rounded-full">Perdida</button>
+            <button data-id="${p.id}" data-status="pending" class="status-update bg-slate-700/60 text-xs px-3 py-1.5 rounded-full">Pendiente</button>
+            <button data-id="${p.id}" class="edit-prediction action-btn">✏️ Editar</button>
+            <button data-id="${p.id}" class="delete-prediction action-btn">🗑️ Eliminar</button>
+          </div>
+          <div class="mt-2 flex justify-between items-center flex-wrap gap-2">
+            <span class="badge-status ${p.status==='won'?'bg-emerald-900 text-emerald-200':p.status==='lost'?'bg-rose-900 text-rose-200':'bg-yellow-900 text-yellow-200'}">${p.status==='won'?'GANADA':p.status==='lost'?'PERDIDA':'PENDIENTE'}</span>
+            <span class="text-xs font-mono ${p.status==='won'?'text-emerald-400':p.status==='lost'?'text-rose-400':'text-slate-400'}">Utilidad: ${utilidad}</span>
+          </div>
+        </div>`;
+      }).join('');
+      // Eventos
+      document.querySelectorAll('.status-update').forEach(btn => { btn.addEventListener('click', (e) => { let id = parseInt(btn.dataset.id); let newStatus = btn.dataset.status; let pred = predictions.find(p=>p.id===id); if(pred) { pred.status = newStatus; savePredictions(); renderHistory(); updateStatsAndCapital(); } }); });
+      document.querySelectorAll('.edit-prediction').forEach(btn => { btn.addEventListener('click', (e) => { let id = parseInt(btn.dataset.id); let pred = predictions.find(p=>p.id===id); if(pred) openEditModal(pred); }); });
+      document.querySelectorAll('.delete-prediction').forEach(btn => { btn.addEventListener('click', (e) => { let id = parseInt(btn.dataset.id); if(confirm("¿Eliminar esta predicción?")) { predictions = predictions.filter(p => p.id !== id); savePredictions(); renderHistory(); updateStatsAndCapital(); } }); });
+    }
+
+    // ===========================
+    //  EDITAR
+    // ===========================
+    function openEditModal(pred) {
+      if (pred.type === 'combinada') {
+        document.getElementById('combEditId').value = pred.id;
+        document.getElementById('combFecha').value = pred.date;
+        document.getElementById('combHora').value = pred.time;
+        pronosticosCombinada = pred.details.map(d => ({
+          home: d.home,
+          away: d.away,
+          league: d.league || 'Liga',
+          market: d.market,
+          line: d.line,
+          probPercent: d.probPercent,
+          odds: d.odds,
+          stake: d.stake
+        }));
+        let totalStake = pronosticosCombinada.reduce((sum, p) => sum + p.stake, 0);
+        document.getElementById('combStakeTotalInput').value = totalStake;
+        document.getElementById('combinadaModal').classList.remove('hidden');
+        renderizarCombinada();
+        actualizarResumenCombinada();
+        document.getElementById('agregarACombinadaBtn').classList.add('hidden');
+        document.getElementById('modoCombinadaIndicator').classList.add('hidden');
+      } else {
+        document.getElementById('modalTitle').innerText = "Editar predicción";
+        document.getElementById('editId').value = pred.id;
+        document.getElementById('modalDate').value = pred.date;
+        document.getElementById('modalTime').value = pred.time;
+        document.getElementById('modalLeague').value = pred.league;
+        document.getElementById('modalHomeTeam').value = pred.home;
+        document.getElementById('modalAwayTeam').value = pred.away;
+        document.getElementById('modalMarket').value = pred.market;
+        document.getElementById('modalLine').value = pred.line;
+        document.getElementById('modalProbability').value = pred.probPercent;
+        document.getElementById('modalOdds').value = pred.odds;
+        document.getElementById('modalStake').value = pred.stake;
+        document.getElementById('predictionModal').classList.remove('hidden');
+      }
+    }
+
+    function resetModalToNew() {
+      document.getElementById('modalTitle').innerText = "Nueva predicción";
+      document.getElementById('editId').value = "";
+      document.getElementById('modalDate').value = new Date().toISOString().slice(0,10);
+      document.getElementById('modalTime').value = new Date().toLocaleTimeString('es-ES', {hour:'2-digit',minute:'2-digit'});
+      document.getElementById('modalLeague').value = "";
+      document.getElementById('modalMarket').value = "";
+      document.getElementById('modalLine').value = "";
+      document.getElementById('modalProbability').value = "";
+      document.getElementById('modalOdds').value = "";
+      document.getElementById('modalStake').value = "";
+      let home = document.getElementById('homeTeamName').value;
+      let away = document.getElementById('awayTeamName').value;
+      document.getElementById('modalHomeTeam').value = home;
+      document.getElementById('modalAwayTeam').value = away;
+    }
+
+    function addOrUpdatePredictionFromModal() {
+      let id = document.getElementById('editId').value;
+      let date = document.getElementById('modalDate').value;
+      let time = document.getElementById('modalTime').value;
+      let league = document.getElementById('modalLeague').value;
+      let home = document.getElementById('modalHomeTeam').value;
+      let away = document.getElementById('modalAwayTeam').value;
+      let market = document.getElementById('modalMarket').value;
+      let line = document.getElementById('modalLine').value;
+      let probPercent = parseFloat(document.getElementById('modalProbability').value) || 0;
+      let odds = parseFloat(document.getElementById('modalOdds').value) || 0;
+      let stake = parseFloat(document.getElementById('modalStake').value) || 0;
+      if(!date || !home || !away) { alert("Complete los campos obligatorios (fecha y equipos)"); return; }
+      if(odds <= 0 || stake <= 0 || probPercent <= 0) { alert("Cuota, stake y probabilidad deben ser mayores a 0"); return; }
+      const predictionData = { date, time, league, home, away, market, line, probPercent, odds, stake, type: 'individual' };
+      if(id) {
+        const index = predictions.findIndex(p => p.id == id);
+        if(index !== -1) {
+          predictions[index] = { ...predictions[index], ...predictionData, status: predictions[index].status };
+          savePredictions();
+        }
+      } else {
+        let newId = Date.now();
+        predictions.unshift({ id: newId, ...predictionData, status: 'pending' });
+        savePredictions();
+      }
+      document.getElementById('predictionModal').classList.add('hidden');
+    }
+
+    // ===========================
+    //  COMBINADA
+    // ===========================
+    let pronosticosCombinada = [];
+
+    function renderizarCombinada() {
+      const container = document.getElementById('listaPronosticosCombinada');
+      const resumen = document.getElementById('resumenCombinada');
+      const guardarBtn = document.getElementById('guardarCombinadaBtn');
+      const countSpan = document.getElementById('combCount');
+      const oddsTotalSpan = document.getElementById('combOddsTotal');
+      const stakeDisplay = document.getElementById('combStakeDisplay');
+      const probTotalSpan = document.getElementById('combProbTotal');
+
+      if (pronosticosCombinada.length === 0) {
+        container.innerHTML = '<div class="text-slate-400 text-sm text-center py-6">No hay pronósticos agregados. Presiona "+ Añadir pronóstico"</div>';
+        resumen.classList.add('hidden');
+        guardarBtn.disabled = true;
+        return;
+      }
+
+      container.innerHTML = pronosticosCombinada.map((p, idx) => {
+        let leagueTitle = p.league || 'Liga';
+        return `
+        <div class="pronostico-card" data-index="${idx}">
+          <div class="flex justify-between items-center mb-3">
+            <span class="font-semibold text-base text-blue-300">${leagueTitle}</span>
+            <button class="eliminar-pronostico text-red-400 hover:text-red-300 text-sm font-medium" data-index="${idx}">✖ Eliminar</button>
+          </div>
+          <div class="campo-combinada">
+            <div class="input-group">
+              <input type="text" class="comb-home" placeholder="Local" value="${p.home || ''}" data-index="${idx}">
+              <input type="text" class="comb-away" placeholder="Visitante" value="${p.away || ''}" data-index="${idx}">
+            </div>
+            <div class="input-group full">
+              <input type="text" class="comb-league" placeholder="Liga" value="${p.league || ''}" data-index="${idx}">
+            </div>
+            <div class="input-group full">
+              <input type="text" class="comb-market" placeholder="Mercado" value="${p.market || ''}" data-index="${idx}">
+            </div>
+            <div class="input-group">
+              <input type="text" class="comb-line" placeholder="Línea" value="${p.line || ''}" data-index="${idx}">
+              <input type="number" class="comb-prob" step="0.1" placeholder="Probabilidad %" value="${p.probPercent || ''}" data-index="${idx}">
+            </div>
+            <div class="input-group">
+              <input type="number" class="comb-odds" step="0.01" placeholder="Cuota" value="${p.odds || ''}" data-index="${idx}">
+            </div>
+          </div>
+        </div>
+      `}).join('');
+
+      document.querySelectorAll('.comb-home, .comb-away, .comb-league, .comb-market, .comb-line, .comb-prob, .comb-odds').forEach(input => {
+        input.addEventListener('input', function() {
+          const idx = parseInt(this.dataset.index);
+          if (isNaN(idx)) return;
+          const field = this.className.split(' ')[0].replace('comb-', '');
+          let val = this.value;
+          if (field === 'probPercent' || field === 'odds') {
+            val = parseFloat(val) || 0;
+          }
+          pronosticosCombinada[idx][field] = val;
+          actualizarResumenCombinada();
+        });
+      });
+
+      document.querySelectorAll('.eliminar-pronostico').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const idx = parseInt(this.dataset.index);
+          if (!isNaN(idx) && idx >= 0 && idx < pronosticosCombinada.length) {
+            pronosticosCombinada.splice(idx, 1);
+            renderizarCombinada();
+            actualizarResumenCombinada();
+          }
+        });
+      });
+
+      actualizarResumenCombinada();
+    }
+
+    function actualizarResumenCombinada() {
+      const resumen = document.getElementById('resumenCombinada');
+      const guardarBtn = document.getElementById('guardarCombinadaBtn');
+      const countSpan = document.getElementById('combCount');
+      const oddsTotalSpan = document.getElementById('combOddsTotal');
+      const stakeDisplay = document.getElementById('combStakeDisplay');
+      const probTotalSpan = document.getElementById('combProbTotal');
+
+      document.querySelectorAll('.pronostico-card').forEach(card => {
+        const idx = parseInt(card.dataset.index);
+        if (isNaN(idx)) return;
+        const p = pronosticosCombinada[idx];
+        p.home = card.querySelector('.comb-home').value;
+        p.away = card.querySelector('.comb-away').value;
+        p.league = card.querySelector('.comb-league').value;
+        p.market = card.querySelector('.comb-market').value;
+        p.line = card.querySelector('.comb-line').value;
+        p.probPercent = parseFloat(card.querySelector('.comb-prob').value) || 0;
+        p.odds = parseFloat(card.querySelector('.comb-odds').value) || 0;
+      });
+
+      const total = pronosticosCombinada.length;
+      if (total === 0) { resumen.classList.add('hidden'); guardarBtn.disabled = true; return; }
+
+      let totalOdds = 1;
+      let totalProb = 1;
+      let todosCompletos = true;
+      pronosticosCombinada.forEach(p => {
+        if (!p.home || !p.away || !p.market || !p.line || p.probPercent <= 0 || p.odds <= 0) {
+          todosCompletos = false;
+        }
+        totalOdds *= p.odds;
+        totalProb *= (p.probPercent / 100);
+      });
+      totalProb = totalProb * 100;
+
+      let stakeTotal = parseFloat(document.getElementById('combStakeTotalInput').value) || 0;
+      if (stakeTotal <= 0) todosCompletos = false;
+
+      countSpan.innerText = total;
+      oddsTotalSpan.innerText = totalOdds.toFixed(2);
+      stakeDisplay.innerHTML = `$${formatCOP(stakeTotal)}`;
+      probTotalSpan.innerHTML = Math.round(totalProb) + '%';
+      resumen.classList.remove('hidden');
+      guardarBtn.disabled = !(total >= 2 && todosCompletos);
+    }
+
+    function abrirCombinadaModal(precargar = false) {
+      document.getElementById('combinadaModal').classList.remove('hidden');
+      if (!document.getElementById('combFecha').value) document.getElementById('combFecha').value = new Date().toISOString().slice(0,10);
+      if (!document.getElementById('combHora').value) document.getElementById('combHora').value = new Date().toLocaleTimeString('es-ES', {hour:'2-digit',minute:'2-digit'});
+      if (precargar) {
+        const home = document.getElementById('homeTeamName').value || 'Local';
+        const away = document.getElementById('awayTeamName').value || 'Visitante';
+        pronosticosCombinada.push({ home, away, league: '', market: '', line: '', probPercent: 0, odds: 0, stake: 0 });
+        renderizarCombinada();
+        document.getElementById('agregarACombinadaBtn').classList.remove('hidden');
+        document.getElementById('modoCombinadaIndicator').classList.add('hidden');
+      } else {
+        renderizarCombinada();
+      }
+      document.getElementById('combStakeTotalInput').value = '';
+      document.getElementById('combEditId').value = '';
+    }
+
+    function cerrarCombinadaModal() {
+      document.getElementById('combinadaModal').classList.add('hidden');
+      document.getElementById('agregarACombinadaBtn').classList.add('hidden');
+      document.getElementById('modoCombinadaIndicator').classList.add('hidden');
+    }
+
+    function agregarPronosticoDesdeAnalisis() {
+      const home = document.getElementById('homeTeamName').value || 'Local';
+      const away = document.getElementById('awayTeamName').value || 'Visitante';
+      const modal = document.getElementById('combinadaModal');
+      if (modal.classList.contains('hidden')) {
+        pronosticosCombinada.push({ home, away, league: '', market: '', line: '', probPercent: 0, odds: 0, stake: 0 });
+        abrirCombinadaModal(false);
+        renderizarCombinada();
+      } else {
+        pronosticosCombinada.push({ home, away, league: '', market: '', line: '', probPercent: 0, odds: 0, stake: 0 });
+        renderizarCombinada();
+        actualizarResumenCombinada();
+      }
+      document.getElementById('modoCombinadaIndicator').classList.add('hidden');
+      document.getElementById('agregarACombinadaBtn').classList.add('hidden');
+    }
+
+    function guardarCombinada() {
+      for (let p of pronosticosCombinada) {
+        if (!p.home || !p.away || !p.market || !p.line || p.probPercent <= 0 || p.odds <= 0) {
+          alert('Completa todos los campos de cada pronóstico (cuota, probabilidad, etc.)');
+          return;
+        }
+      }
+      if (pronosticosCombinada.length < 2) {
+        alert('Debes agregar al menos 2 pronósticos.');
+        return;
+      }
+      const stakeTotal = parseFloat(document.getElementById('combStakeTotalInput').value) || 0;
+      if (stakeTotal <= 0) {
+        alert('Ingresa un stake total mayor a 0.');
+        return;
+      }
+      const date = document.getElementById('combFecha').value;
+      const time = document.getElementById('combHora').value;
+      if (!date || !time) { alert('Selecciona fecha y hora.'); return; }
+
+      const count = pronosticosCombinada.length;
+      const stakeIndividual = stakeTotal / count;
+
+      let totalOdds = 1;
+      let totalProb = 1;
+      let leagues = [], homes = [], aways = [], markets = [], lines = [];
+      pronosticosCombinada.forEach(p => {
+        totalOdds *= p.odds;
+        totalProb *= (p.probPercent / 100);
+        leagues.push(p.league || 'Liga');
+        homes.push(p.home);
+        aways.push(p.away);
+        markets.push(p.market);
+        lines.push(p.line);
+        p.stake = stakeIndividual;
+      });
+      totalProb = totalProb * 100;
+
+      const editId = document.getElementById('combEditId').value;
+      if (editId) {
+        const index = predictions.findIndex(p => p.id == editId);
+        if (index !== -1) {
+          predictions[index] = {
+            ...predictions[index],
+            date, time,
+            league: leagues.join(' / '),
+            home: homes.join(' / '),
+            away: aways.join(' / '),
+            market: markets.join(' / '),
+            line: lines.join(' / '),
+            probPercent: totalProb,
+            odds: totalOdds,
+            stake: stakeTotal,
+            details: pronosticosCombinada.map(p => ({
+              home: p.home,
+              away: p.away,
+              league: p.league || 'Liga',
+              market: p.market,
+              line: p.line,
+              probPercent: p.probPercent,
+              odds: p.odds,
+              stake: p.stake
+            }))
+          };
+          savePredictions();
+        }
+      } else {
+        const newPred = {
+          id: Date.now(),
+          date, time,
+          league: leagues.join(' / '),
+          home: homes.join(' / '),
+          away: aways.join(' / '),
+          market: markets.join(' / '),
+          line: lines.join(' / '),
+          probPercent: totalProb,
+          odds: totalOdds,
+          stake: stakeTotal,
+          status: 'pending',
+          type: 'combinada',
+          details: pronosticosCombinada.map(p => ({
+            home: p.home,
+            away: p.away,
+            league: p.league || 'Liga',
+            market: p.market,
+            line: p.line,
+            probPercent: p.probPercent,
+            odds: p.odds,
+            stake: p.stake
+          }))
+        };
+        predictions.unshift(newPred);
+        savePredictions();
+      }
+      pronosticosCombinada = [];
+      cerrarCombinadaModal();
+      renderHistory();
+      updateStatsAndCapital();
+    }
+
+    // ===========================
+    //  ANÁLISIS
+    // ===========================
+    function calculateAnalysis() {
+      const homeName = document.getElementById('homeTeamName').value.trim() || "Local";
+      const awayName = document.getElementById('awayTeamName').value.trim() || "Visitante";
+
+      // GOLES
+      const hAvgG = parseFloat(document.getElementById('h_avg_goals').value)||0;
+      const hAvgC = parseFloat(document.getElementById('h_avg_conceded').value)||0;
+      const aAvgG = parseFloat(document.getElementById('a_avg_goals').value)||0;
+      const aAvgC = parseFloat(document.getElementById('a_avg_conceded').value)||0;
+      const projH_goals = (hAvgG + aAvgC)/2;
+      const projA_goals = (aAvgG + hAvgC)/2;
+
+      document.getElementById('xg_local_val').innerText = projH_goals.toFixed(2);
+      document.getElementById('xg_away_val').innerText = projA_goals.toFixed(2);
+      document.getElementById('homeTeamTitleLine').innerHTML = `Goles (${homeName})`;
+      document.getElementById('awayTeamTitleLine').innerHTML = `Goles (${awayName})`;
+
+      // General
+      const maxG = 10;
+      let hProbs_goals = [], aProbs_goals = [];
+      for(let i=0;i<maxG;i++) { hProbs_goals[i]=poisson(i,projH_goals); aProbs_goals[i]=poisson(i,projA_goals); }
+      let pWin=0,pDraw=0,pLoss=0,pBTTS=0, totalGoalMap={};
+      for(let h=0;h<maxG;h++) for(let a=0;a<maxG;a++) { let prob = hProbs_goals[h]*aProbs_goals[a]; if(h>a) pWin+=prob; else if(h===a) pDraw+=prob; else pLoss+=prob; if(h>0 && a>0) pBTTS+=prob; let tot = h+a; totalGoalMap[tot] = (totalGoalMap[tot]||0)+prob; }
+      document.getElementById('res_1x2').innerHTML = renderProgressBar(pWin, `Victoria ${homeName}`, true) + renderProgressBar(pDraw, "Empate", true) + renderProgressBar(pLoss, `Victoria ${awayName}`, true);
+      document.getElementById('res_dc').innerHTML = renderProgressBar(pWin+pDraw, `1X (${homeName} o empate)`, true) + renderProgressBar(pLoss+pDraw, `X2 (${awayName} o empate)`, true) + renderProgressBar(pWin+pLoss, "12 (sin empate)", true);
+      document.getElementById('res_btts_simple').innerHTML = `<div>${renderProgressBar(pBTTS, "Sí", false)}</div><div>${renderProgressBar(1-pBTTS, "No", false)}</div>`;
+
+      // Goles totales
+      let lines_goals = [0.5, 1.5, 2.5, 3.5, 4.5];
+      let totalHtml = '';
+      for(let t of lines_goals) { let pUnder = 0; Object.keys(totalGoalMap).forEach(g => { if(parseInt(g) < t) pUnder += totalGoalMap[g]; }); let pOver = 1 - pUnder; totalHtml += renderDualRow(t, pOver, pUnder); }
+      document.getElementById('totalGoalsVisual').innerHTML = totalHtml;
+
+      // Goles individuales
+      let thresholds_goals = [0.5, 1.5, 2.5, 3.5];
+      document.getElementById('res_home_goals_visual').innerHTML = renderTeamGoalsVisual(hProbs_goals, thresholds_goals);
+      document.getElementById('res_away_goals_visual').innerHTML = renderTeamGoalsVisual(aProbs_goals, thresholds_goals);
+
+      // CÓRNERS
+      const hAvgCorners = parseFloat(document.getElementById('h_avg_corners').value)||0;
+      const hAvgCornersC = parseFloat(document.getElementById('h_avg_corners_conceded').value)||0;
+      const aAvgCorners = parseFloat(document.getElementById('a_avg_corners').value)||0;
+      const aAvgCornersC = parseFloat(document.getElementById('a_avg_corners_conceded').value)||0;
+      const projH_corners = (hAvgCorners + aAvgCornersC)/2;
+      const projA_corners = (aAvgCorners + hAvgCornersC)/2;
+
+      document.getElementById('corners_local_val').innerText = projH_corners.toFixed(1);
+      document.getElementById('corners_away_val').innerText = projA_corners.toFixed(1);
+      document.getElementById('homeTeamCornersTitle').innerHTML = `Córners (${homeName})`;
+      document.getElementById('awayTeamCornersTitle').innerHTML = `Córners (${awayName})`;
+
+      const maxC = 20;
+      let hProbs_corners = [], aProbs_corners = [];
+      for(let i=0;i<maxC;i++) { hProbs_corners[i]=poisson(i,projH_corners); aProbs_corners[i]=poisson(i,projA_corners); }
+      let totalCornersMap = {};
+      for(let h=0;h<maxC;h++) for(let a=0;a<maxC;a++) { let prob = hProbs_corners[h]*aProbs_corners[a]; let tot = h+a; totalCornersMap[tot] = (totalCornersMap[tot]||0)+prob; }
+
+      let lines_corners_total = [7.5, 8.5, 9.5, 10.5, 11.5, 12.5, 13.5];
+      let cornersHtml = '';
+      for(let t of lines_corners_total) { let pUnder = 0; Object.keys(totalCornersMap).forEach(g => { if(parseInt(g) < t) pUnder += totalCornersMap[g]; }); let pOver = 1 - pUnder; cornersHtml += renderDualRow(t, pOver, pUnder); }
+      document.getElementById('totalCornersVisual').innerHTML = cornersHtml;
+
+      let lines_corners_ind = [3.5, 4.5, 6.5, 7.8, 8.5, 9.5, 10.5];
+      document.getElementById('res_home_corners_visual').innerHTML = renderTeamCornersVisual(hProbs_corners, lines_corners_ind);
+      document.getElementById('res_away_corners_visual').innerHTML = renderTeamCornersVisual(aProbs_corners, lines_corners_ind);
+
+      document.getElementById('placeholder').classList.add('hidden');
+      document.getElementById('results_container').classList.remove('hidden');
+
+      // Activar pestaña General por defecto
+      document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(tb => tb.classList.remove('active'));
+      document.getElementById('tab-general').classList.add('active');
+      document.querySelector('.tab-btn[data-tab="general"]').classList.add('active');
+
+      // Colapsar panel de entrada automáticamente
+      const inputsContainer = document.getElementById('inputsContainer');
+      if (!inputsContainer.classList.contains('collapsed')) {
+        inputsContainer.classList.add('collapsed');
+        const icon = document.querySelector('#toggleInputsBtn svg');
+        icon.classList.add('collapsed');
+      }
+    }
+
+    // ===========================
+    //  EVENTOS Y NAVEGACIÓN
+    // ===========================
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+      });
+    });
+
+    document.getElementById('toggleInputsBtn').addEventListener('click', function() {
+      const container = document.getElementById('inputsContainer');
+      container.classList.toggle('collapsed');
+      const icon = this.querySelector('svg');
+      icon.classList.toggle('collapsed');
+    });
+
+    function clearAnalysisFields() {
+      document.getElementById('homeTeamName').value = '';
+      document.getElementById('awayTeamName').value = '';
+      document.getElementById('h_avg_goals').value = '';
+      document.getElementById('h_avg_conceded').value = '';
+      document.getElementById('a_avg_goals').value = '';
+      document.getElementById('a_avg_conceded').value = '';
+      document.getElementById('h_avg_corners').value = '';
+      document.getElementById('h_avg_corners_conceded').value = '';
+      document.getElementById('a_avg_corners').value = '';
+      document.getElementById('a_avg_corners_conceded').value = '';
+      document.getElementById('placeholder').classList.remove('hidden');
+      document.getElementById('results_container').classList.add('hidden');
+      const container = document.getElementById('inputsContainer');
+      container.classList.remove('collapsed');
+      const icon = document.querySelector('#toggleInputsBtn svg');
+      icon.classList.remove('collapsed');
+    }
+
+    function switchTab(tabId) {
+      document.getElementById('analysisPanel').classList.add('hidden');
+      document.getElementById('historyPanel').classList.add('hidden');
+      document.getElementById('statsPanel').classList.add('hidden');
+      if(tabId === 'analysis') document.getElementById('analysisPanel').classList.remove('hidden');
+      if(tabId === 'history') { document.getElementById('historyPanel').classList.remove('hidden'); renderHistory(); updateStatsAndCapital(); }
+      if(tabId === 'stats') { document.getElementById('statsPanel').classList.remove('hidden'); updateStatsAndCapital(); renderMovementsHistory(); }
+      document.querySelectorAll('.nav-pill').forEach(pill => pill.classList.remove('active'));
+      document.querySelector(`.nav-pill[data-tab="${tabId}"]`).classList.add('active');
+    }
+
+    document.getElementById('calc_btn').addEventListener('click', function(e) {
+      try {
+        calculateAnalysis();
+        switchTab('analysis');
+      } catch (err) {
+        console.error(err);
+        alert('Error al analizar: ' + err.message);
+      }
+    });
+
+    document.getElementById('clearAnalysisBtn').onclick = clearAnalysisFields;
+
+    // Individual
+    document.getElementById('openAddPredictionBtn').onclick = () => { resetModalToNew(); document.getElementById('predictionModal').classList.remove('hidden'); };
+    document.getElementById('closeModalBtn').onclick = () => document.getElementById('predictionModal').classList.add('hidden');
+    document.getElementById('savePredictionBtn').onclick = addOrUpdatePredictionFromModal;
+
+    // Combinada
+    document.getElementById('openCombinadaBtn').addEventListener('click', () => {
+      if (pronosticosCombinada.length > 0) {
+        if (confirm('Tienes una combinada en progreso. ¿Quieres continuar o empezar de nuevo?')) {
+          abrirCombinadaModal(false);
+        } else {
+          pronosticosCombinada = [];
+          const home = document.getElementById('homeTeamName').value || 'Local';
+          const away = document.getElementById('awayTeamName').value || 'Visitante';
+          pronosticosCombinada.push({ home, away, league: '', market: '', line: '', probPercent: 0, odds: 0, stake: 0 });
+          abrirCombinadaModal(false);
+        }
+      } else {
+        const home = document.getElementById('homeTeamName').value || 'Local';
+        const away = document.getElementById('awayTeamName').value || 'Visitante';
+        pronosticosCombinada.push({ home, away, league: '', market: '', line: '', probPercent: 0, odds: 0, stake: 0 });
+        abrirCombinadaModal(false);
+      }
+    });
+
+    document.getElementById('agregarACombinadaBtn').addEventListener('click', agregarPronosticoDesdeAnalisis);
+    document.getElementById('closeCombinadaBtn').addEventListener('click', cerrarCombinadaModal);
+    document.getElementById('addPronosticoBtn').addEventListener('click', () => {
+      pronosticosCombinada.push({ home: '', away: '', league: '', market: '', line: '', probPercent: 0, odds: 0, stake: 0 });
+      renderizarCombinada();
+      actualizarResumenCombinada();
+    });
+    document.getElementById('guardarCombinadaBtn').addEventListener('click', guardarCombinada);
+    document.getElementById('combStakeTotalInput').addEventListener('input', actualizarResumenCombinada);
+
+    // Stats - capital
+    document.getElementById('initialCapitalInput').addEventListener('change', (e) => { initialCapital = parseFloat(e.target.value)||0; saveCapital(); updateStatsAndCapital(); });
+    document.getElementById('addDepositBtn').onclick = () => openMovementModal('deposit');
+    document.getElementById('addWithdrawBtn').onclick = () => openMovementModal('withdraw');
+    document.getElementById('closeCapitalModal').onclick = () => document.getElementById('capitalModal').classList.add('hidden');
+    document.getElementById('confirmCapitalBtn').onclick = addMovement;
+
+    // Historial - filtros
+    document.getElementById('resetFilterBtn').onclick = () => { document.getElementById('historyDateFilter').value = ''; renderHistory(); };
+    document.getElementById('historyDateFilter').addEventListener('change', () => renderHistory());
+
+    // Ajustes
+    document.getElementById('settingsBtn').onclick = () => document.getElementById('settingsModal').classList.remove('hidden');
+    document.getElementById('closeSettingsBtn').onclick = () => document.getElementById('settingsModal').classList.add('hidden');
+    document.getElementById('exportDataBtn').onclick = () => {
+      const data = { predictions, initialCapital, capitalMovements };
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type: "application/json"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = "serbet_backup.json"; a.click(); URL.revokeObjectURL(url);
+    };
+    document.getElementById('importFileInput').onchange = (e) => {
+      if(e.target.files.length) {
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          try {
+            const json = JSON.parse(ev.target.result);
+            if(json.predictions !== undefined) predictions = json.predictions;
+            if(json.initialCapital !== undefined) { initialCapital = json.initialCapital; document.getElementById('initialCapitalInput').value = initialCapital; saveCapital(); }
+            if(json.capitalMovements !== undefined) { capitalMovements = json.capitalMovements; saveMovements(); } else { capitalMovements = []; saveMovements(); }
+            savePredictions();
+            renderHistory();
+            updateStatsAndCapital();
+            alert("Datos importados.");
+          } catch(err) { alert("Archivo inválido"); }
+        };
+        reader.readAsText(e.target.files[0]);
+        e.target.value = '';
+      }
+    };
+
+    window.onclick = (e) => {
+      if(e.target === document.getElementById('settingsModal')) document.getElementById('settingsModal').classList.add('hidden');
+      if(e.target === document.getElementById('predictionModal')) document.getElementById('predictionModal').classList.add('hidden');
+      if(e.target === document.getElementById('capitalModal')) document.getElementById('capitalModal').classList.add('hidden');
+      if(e.target === document.getElementById('combinadaModal')) cerrarCombinadaModal();
+    };
+
+    function setupEnterNavigation() {
+      const inputs = [
+        document.getElementById('homeTeamName'),
+        document.getElementById('awayTeamName'),
+        document.getElementById('h_avg_goals'),
+        document.getElementById('h_avg_conceded'),
+        document.getElementById('a_avg_goals'),
+        document.getElementById('a_avg_conceded'),
+        document.getElementById('h_avg_corners'),
+        document.getElementById('h_avg_corners_conceded'),
+        document.getElementById('a_avg_corners'),
+        document.getElementById('a_avg_corners_conceded')
+      ].filter(input => input !== null);
+      if (inputs.length === 0) return;
+      inputs.forEach((input, idx) => {
+        input.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            const nextInput = inputs[idx + 1];
+            if (nextInput) {
+              nextInput.focus();
+            } else {
+              document.getElementById('calc_btn').click();
+            }
+          }
+        });
+      });
+    }
+
+    let currentMovementType = null;
+    function openMovementModal(type) {
+      currentMovementType = type;
+      document.getElementById('capitalModalTitle').innerText = type === 'deposit' ? 'Depósito' : 'Retiro';
+      document.getElementById('capitalAmount').value = '';
+      document.getElementById('capitalDate').value = new Date().toISOString().slice(0,10);
+      document.getElementById('capitalModal').classList.remove('hidden');
+    }
+    function addMovement() {
+      let amount = parseFloat(document.getElementById('capitalAmount').value);
+      let date = document.getElementById('capitalDate').value;
+      if(!amount || amount <= 0 || !date) { alert("Ingrese cantidad y fecha válidas"); return; }
+      capitalMovements.push({ date, amount, type: currentMovementType });
+      saveMovements();
+      document.getElementById('capitalModal').classList.add('hidden');
+      updateStatsAndCapital();
+      renderMovementsHistory();
+    }
+
+    document.querySelectorAll('.nav-pill').forEach(btn => btn.addEventListener('click', (e) => switchTab(btn.dataset.tab)));
+
+    loadStorage();
+    if(predictions.length) renderHistory();
+    switchTab('analysis');
+    setupEnterNavigation();
+
+    // ===== SERVICE WORKER REGISTRADO INLINE =====
+    if ('serviceWorker' in navigator) {
+      const swCode = `
+        const CACHE_NAME = 'serbet-v1.0';
+        const ASSETS = ['/', '/index.html'];
+
+        self.addEventListener('install', (event) => {
+          event.waitUntil(
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                console.log('[SW] Cacheando archivos iniciales');
+                return cache.addAll(ASSETS);
+              })
+              .then(() => self.skipWaiting())
+          );
+        });
+
+        self.addEventListener('activate', (event) => {
+          event.waitUntil(
+            caches.keys().then(keys => {
+              return Promise.all(
+                keys.filter(key => key !== CACHE_NAME)
+                  .map(key => caches.delete(key))
+              );
+            })
+          );
+          return self.clients.claim();
+        });
+
+        self.addEventListener('fetch', (event) => {
+          const request = event.request;
+          const url = new URL(request.url);
+
+          if (request.mode === 'navigate' || url.pathname.endsWith('.html')) {
+            event.respondWith(
+              fetch(request)
+                .then(response => {
+                  const clone = response.clone();
+                  caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
+                  return response;
+                })
+                .catch(() => caches.match('/index.html'))
+            );
+          } else {
+            event.respondWith(
+              caches.match(request)
+                .then(cached => cached || fetch(request))
+                .catch(() => new Response('Offline', { status: 404 }))
+            );
+          }
+        });
+      `;
+
+      const blob = new Blob([swCode], { type: 'application/javascript' });
+      const swUrl = URL.createObjectURL(blob);
+
+      navigator.serviceWorker.register(swUrl)
+        .then(() => console.log('✅ SW registrado desde inline'))
+        .catch(err => console.log('❌ Error al registrar SW:', err));
+    }
+  </script>
+</body>
+</html>
