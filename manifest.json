@@ -1,0 +1,13 @@
+{
+  "background_color": "#020617",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "SerBet - Predictor Deportivo",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "SerBet",
+  "start_url": "https://sergiosolanoo1801208.github.io/SerBet-PWA/",
+  "theme_color": "#0f172a",
+  "description": "Analiza partidos, calcula probabilidades y gestiona tus apuestas",
+  "lang": "es"
+}
