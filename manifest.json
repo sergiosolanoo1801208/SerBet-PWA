@@ -1,13 +1,20 @@
 {
-  "background_color": "#020617",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "SerBet - Predictor Deportivo",
-  "orientation": "any",
-  "scope": "/",
+  "name": "SerBet",
   "short_name": "SerBet",
-  "start_url": "https://sergiosolanoo1801208.github.io/SerBet-PWA/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
   "theme_color": "#0f172a",
-  "description": "Analiza partidos, calcula probabilidades y gestiona tus apuestas",
-  "lang": "es"
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
